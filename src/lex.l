@@ -7,27 +7,27 @@
 
 /* definicoes regulares */ 
 
-char [a-z]
+letras [a-z]
 upper [A-Z]
-digit   [0-9]
-integer {digit}+
-negative [-]{integer}
-float   {integer}[.]{integer}
-floatnegative {negative}[.]{integer}
-placa {upper}{3}[-]{integer}[4]
-string ({char}|{upper})+
-tel     {digit}{4}[-]{digit}{4}
-nome    {upper}({char})+[ ]{upper}({char})+[ ]{upper}({char})+([ ]{upper}({char})+)?
+digito   [0-9]
+inteiro {digito}+
+negativo [-]{inteiro}
+decimal   {inteiro}[.]{inteiro}
+decimalnegativo {negativo}[.]{inteiro}
+placa {upper}{3}[-]{inteiro}[4]
+palavra ({letras}|{upper})+
+telefone     {digito}{4}[-]{digito}{4}
+nomeproprio    {upper}({letras})+[ ]{upper}({letras})+[ ]{upper}({letras})+([ ]{upper}({letras})+)?
 %% 
 
-{tel}     {printf("\nFoi encontrado uma telefone. LEXEMA: %s", yytext);}
+{inteiro}         {printf("\nFoi encontrado um numero inteiro positivo. LEXEMA: %s", yytext);}
+{negativo}         {printf("\nFoi encontrado um numero inteiro negativo. LEXEMA: %s", yytext);}
+{decimal}         {printf("\nFoi encontrado um numero decimal. LEXEMA: %s", yytext);}
+{decimalnegativo}         {printf("\nFoi encontrado um numero decimal negativo. LEXEMA: %s", yytext);}
 {placa}     {printf("\nFoi encontrado uma placa. LEXEMA: %s", yytext);}
-{floatnegative}         {printf("\nFoi encontrado um numero decimal negativo. LEXEMA: %s", yytext);}
-{float}         {printf("\nFoi encontrado um numero decimal. LEXEMA: %s", yytext);}
-{integer}         {printf("\nFoi encontrado um numero inteiro positivo. LEXEMA: %s", yytext);}
-{negative}         {printf("\nFoi encontrado um numero inteiro negativo. LEXEMA: %s", yytext);}
-{nome}     {printf("\nFoi encontrado um nome próprio. LEXEMA: %s", yytext);}
-{string}    {printf("\nFoi encontrada uma palavra. LEXEMA: %s", yytext);}
+{palavra}    {printf("\nFoi encontrada uma palavra. LEXEMA: %s", yytext);}
+{telefone}     {printf("\nFoi encontrado uma telefone. LEXEMA: %s", yytext);}
+{nomeproprio}     {printf("\nFoi encontrado um nome próprio. LEXEMA: %s", yytext);}
 [ \t\n]+    {/*nenhuma acao e nenhum retorno quando encontrar espacos em branco*/} 
 
 %% 
