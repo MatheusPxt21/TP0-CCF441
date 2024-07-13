@@ -11,12 +11,17 @@ letras [a-z]
 upper [A-Z]
 digit   [0-9]
 string ({letras}|{upper}|{digit})+
+stringespecial ({letras}|{digit}|[._])+
 
 cpf {digit}{3}\.{digit}{3}\.{digit}{3}\-{digit}{2}
 data (([0-2]{digit})|(3[0-1]))\/((1[0-2]|0[1-9]))\/{digit}{4}
-comentario [\/\*]+(.*)+[\*\/]
+comentario \/\*(.*)\*\/
 op (\<|\>|<\=|>\=|=\=|!\=)
 condicional if\s*\(\s*{string}\s*{op}\s*{string}\s*\)
+email {stringespecial}@gmail\.com
+
+delim [ \t\n]
+ws {delim}+
 
 %% 
 
@@ -24,7 +29,7 @@ condicional if\s*\(\s*{string}\s*{op}\s*{string}\s*\)
 {data}         {printf("\nFoi encontrada uma data. LEXEMA: %s", yytext);}
 {comentario}   {printf("\nFoi encontrado um comentario. LEXEMA: %s", yytext);}
 {condicional}  {printf("\nFoi encontrada uma condicional simples. LEXEMA: %s", yytext);}
-
+{email}        {printf("\nFoi encontrado um email. LEXEMA: %s", yytext);}
 
 [ \t\n]+    {/*nenhuma acao e nenhum retorno quando encontrar espacos em branco*/} 
 

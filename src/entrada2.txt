@@ -1,14 +1,8 @@
 111.111.111-85
-/* askdjhadhakdhakudhw kabnkjdhagkuwdakjsdbakudwasdbj */
-21/04/2003
-16/09/2000
-30/09/2008
+/* askdjhadhakdhakudhw kabnkjdhagkuwdakjsdbakudwasdbj */21/04/2003
+16/09/2000 30/09/2008
 29/09/1967
-17/04/1972
-01/11/1111
-31/12/1111
-if(valor1>valor2)
-if(x<=y)
-if(1<2)
-555.678.111-95
-/* outro comentario */
+17/04/1972 01/11/1111 31/12/1111 if(valor1>valor2)
+if(x<=y) if(1<2) 555.678.111-95 /* outro comentario */
+matheus@gmail.com
+matheus21@gmail.com
