@@ -14,10 +14,10 @@ string ({letras}|{upper}|{digit})+
 stringespecial ({letras}|{digit}|[._])+
 
 cpf {digit}{3}\.{digit}{3}\.{digit}{3}\-{digit}{2}
-data (([0-2]{digit})|(3[0-1]))\/((1[0-2]|0[1-9]))\/{digit}{4}
+data ((0[1-9]|[1-2]{digit})|(3[0-1]))\/((1[0-2]|0[1-9]))\/{digit}{4}
 comentario \/\*(.*)\*\/
 op (\<|\>|<\=|>\=|=\=|!\=)
-condicional if\s*\(\s*{string}\s*{op}\s*{string}\s*\)
+condicional if\({string}{op}{string}\)
 email {stringespecial}@gmail\.com
 
 delim [ \t\n]
